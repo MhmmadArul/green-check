@@ -1,7 +1,8 @@
 # 🌿 GreenCheck
 
-**GreenCheck** adalah aplikasi berbasis web yang membantu pengguna mengidentifikasi penyakit pada tanaman berdasarkan gejala yang muncul.
-Dengan antarmuka sederhana dan intuitif, pengguna cukup memilih gejala melalui **checkbox**, dan sistem akan memberikan hasil diagnosis kemungkinan penyakit tanaman.
+**GreenCheck** adalah sebuah aplikasi berbasis web yang dikembangkan sebagai tugas UTS.
+Aplikasi ini merupakan sistem pakar yang membantu pengguna mengidentifikasi penyakit pada tanaman berdasarkan gejala yang ditimbulkan.
+Pengguna dapat memilih gejala melalui daftar checkbox, dan sistem akan memberikan hasil diagnosis penyakit tanaman yang paling mungkin terjadi.
 
 ---
 
