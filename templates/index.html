@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Penyakit Tanaman</title>
+    <style>
+        /* --- Global --- */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            margin-top: 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 420px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
+        }
+
+        /* --- Animasi --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        /* --- Checkbox + Label --- */
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        label:hover {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            transform: translateX(3px);
+        }
+
+        input[type=checkbox] {
+            accent-color: #2e7d32;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* --- Tombol Submit --- */
+        input[type=submit] {
+            width: 100%;
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 20px;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #43a047;
+            transform: scale(1.02);
+        }
+
+        input[type=submit]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌿 GreenCheck</h1>
+        <p>Pilih gejala yang dialami tanaman Anda:</p>
+        <form method="post" action="/diagnosa">
+            {% for fakta in fakta_pertanyaan %}
+            <label>
+                <input type="checkbox" name="fakta" value="{{ fakta }}"> {{ fakta }}
+            </label>
+            {% endfor %}
+            <input type="submit" value="Diagnosa Sekarang">
+        </form>
+    </div>
+</body>
+
+</html>

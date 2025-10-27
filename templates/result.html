@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Diagnosa</title>
+    <style>
+        /* === Global Style === */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 40px 50px;
+            margin-top: 70px;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
+        }
+
+        /* === Animasi === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #2e7d32;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #388e3c;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li.fakta {
+            background: #f1f8e9;
+            border-left: 5px solid #66bb6a;
+            margin: 6px 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        li.hasil {
+            background: #c8e6c9;
+            border-left: 6px solid #2e7d32;
+            margin: 8px 0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #1b5e20;
+        }
+
+        p {
+            margin-top: 10px;
+            color: #444;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: white;
+            background: #2e7d32;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        a:hover {
+            background: #43a047;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌱 Hasil Diagnosa</h1>
+
+        <h3>Gejala yang Anda pilih:</h3>
+        <ul>
+            {% for f in fakta_diketahui %}
+            <li class="fakta">{{ f }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if hasil %}
+        <h3>Tanaman kemungkinan terkena penyakit:</h3>
+        <ul>
+            {% for p in hasil %}
+            <li class="hasil">{{ p }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p><b>Tidak ditemukan penyakit yang cocok dengan gejala yang dipilih.</b></p>
+        {% endif %}
+
+        <a href="/">Kembali</a>
+    </div>
+</body>
+
+</html>
