@@ -53,21 +53,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 4. Instal dependensi yang diperlukan
-
-Jika terdapat file `requirements.txt`, jalankan:
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Jalankan server
+### 4. Jalankan server
 
 ```bash
 python app.py
 ```
 
-### 6. Buka di browser
+### 5. Buka di browser
 
 Kunjungi:
 
