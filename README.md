@@ -81,14 +81,10 @@ http://localhost:5000
 
 ```
 GreenCheck/
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── images/
 ├── templates/
 │   └── index.html
+│   └── result.html   
 ├── app.py
-├── requirements.txt
 └── README.md
 ```
 
